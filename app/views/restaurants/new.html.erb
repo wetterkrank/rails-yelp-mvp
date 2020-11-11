@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>Add a restaurant</h1>
+
+    <%= simple_form_for @restaurant do |f| %>
+        <%= f.input :category, label: "Category", as: :select, collection: Restaurant::CATEGORIES %>
+        <%= f.input :name, label: "Name" %>
+        <%= f.input :address, label: "Address" %>
+        <%= f.input :phone_number, label: "Phone number" %>
+        <%= f.submit %>
+    <% end %>
+
+</div>
+
