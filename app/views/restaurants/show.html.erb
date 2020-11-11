@@ -1,20 +1,28 @@
 <div class="container mt-5">
     <h1><%= @restaurant.name %></h1>
     
-    <h3><%= @restaurant.category %></h3>
-    <p>
+    <h3><%= @restaurant.category.capitalize %></h3>
+    <p class="address">
         <%= @restaurant.address %>
     </p>
-    <p>
+    <p class="phone">
         <%= @restaurant.phone_number %>
     </p>
 
     <% @restaurant.reviews.each do |review|%>
-        <p>Rating: <%= review.rating %></p>
-        <p><%= review.content %></p>
+    <%  %>
+        <p class="rating-stars">Rating: <%= Array.new(review.rating, "⭐").join %></p>
+        <p class="rating-text"><%= review.content %></p>
     <% end %>
     
-    <%= button_to  "Add a review", new_restaurant_review_path(@restaurant), method: :get %>
+    <br>
+    <h3>Add a review</h3>
+    <%= simple_form_for [@restaurant, @review] do |f| %>
+    <%= f.input :rating, label: "Rating", collection: 0..5 %>
+    <%= f.input :content, label: "Content" %>
+    <%= f.submit %>
+    <% end %>
+    <br>
 
     <%= link_to "Restaurants", restaurants_path %>
 </div>
