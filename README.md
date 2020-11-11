@@ -1,2 +1,2 @@
-Another Rails exercise app.
-Featuring nested resources and a simple_form with a dropdown
+Another Rails exercise app (Restaurants & Reviews).
+Featuring nested resources and a simple_form with a dropdown.
