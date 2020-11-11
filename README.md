@@ -1,1 +1,2 @@
-Another Rails exercise app
+Another Rails exercise app.
+Featuring nested resources and a simple_form with a dropdown
